@@ -14,3 +14,8 @@ crash.log
 
 # For built boxes
 *.box
+
+# Python venv
+ansible/bin/
+ansible/lib/
+ansible/lib64
