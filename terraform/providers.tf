@@ -11,7 +11,7 @@ provider "hyperv" {
   user     = "Work"
   password = "Zaxxon1!"
   # host     = "192.168.68.72"
-  host     = "127.0.0.1"
+  host     = "172.31.0.1"
   insecure = true
   https    = false
   port     = 5985
@@ -46,7 +46,7 @@ module "win2k22-noui" {
 }
 
 module "win2k22" {
-  source = "./win2k22"
+  source      = "./win2k22"
   for_each    = local.win2k22
   server_name = each.key
   cpus        = each.value.cpus
