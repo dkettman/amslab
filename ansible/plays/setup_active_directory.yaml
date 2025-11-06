@@ -1,0 +1,26 @@
+---
+- name: Setup Microsoft Active Directory
+  hosts: amslab-dc01
+  gather_facts: true
+  tasks:
+    - name: Create new domain in a new forest on the target host and reboot
+      microsoft.ad.domain:
+        dns_domain_name: amslab.local
+        safe_mode_password: New123Pass!!
+        install_dns: true
+        reboot: true
+      tags:
+        - ad
+
+    - name: Install and setup DNS
+      ansible.windows.win_feature:
+        name:
+          - DNS
+          - RSAT-DNS-Server
+        state: present
+
+    - name: Set DNS Forwarders (Google)
+      ansible.windows.win_powershell:
+        script: |
+          Set-DNSServerForwarder -IPAddress "8.8.8.8","4.4.2.2"
+      

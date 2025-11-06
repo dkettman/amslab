@@ -1,0 +1,30 @@
+---
+all:
+  hosts:
+    amslab-dc01:
+      ansible_host: 192.168.12.10
+      ansible_user: ansible
+      ansible_password: New123Pass!!
+      ansible_connection: psrp
+      ansible_psrp_auth: basic
+      ansible_psrp_cert_validation: ignore
+      ansible_psrp_message_encryption: never
+      ansible_psrp_protocol: http
+    amslab-sql01:
+      ansible_host: 192.168.12.15
+      ansible_user: ansible
+      ansible_password: New123Pass!!
+      ansible_connection: psrp
+      ansible_psrp_auth: basic
+      ansible_psrp_cert_validation: ignore
+      ansible_psrp_message_encryption: never
+      ansible_psrp_protocol: http
+    amslab-app01:
+      ansible_host: 192.168.12.20
+      ansible_user: ansible
+      ansible_password: New123Pass!!
+      ansible_connection: psrp
+      ansible_psrp_auth: basic
+      ansible_psrp_cert_validation: ignore
+      ansible_psrp_message_encryption: never
+      ansible_psrp_protocol: http
