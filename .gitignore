@@ -19,3 +19,9 @@ crash.log
 ansible/bin/
 ansible/lib/
 ansible/lib64
+
+# Terraform
+terraform/.terraform.lock.hcl
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
